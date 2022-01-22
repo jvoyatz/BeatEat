@@ -1,4 +1,10 @@
 package com.jvoyatz.beateat.domain.usecases
 
-class SearchPlacesInteractor {
+import com.jvoyatz.beateat.domain.repository.PlacesRepository
+
+class SearchPlacesInteractor(val repository: PlacesRepository) {
+
+    operator fun invoke(){
+
+    }
 }

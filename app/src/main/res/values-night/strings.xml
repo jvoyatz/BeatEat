@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="loc_precise_granted">Precise location access granted for this app</string>
 </resources>

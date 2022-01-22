@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">BeatEat</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="loc_precise_granted">Precise location access granted for this app</string>
+    <string name="loc_approx_granted">Approximate location access granted for this app</string>
+    <string name="warning">Warning</string>
+    <string name="location_permissions_not_granted_message">This app needs the location permissions so as to provide places nearby your current location! Press ok to request again, otherwise you won\'t be able to see the suggested places.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>

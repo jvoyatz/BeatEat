@@ -1,4 +1,4 @@
-package com.jvoyatz.beateat
+package com.jvoyatz.beateat.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -8,26 +8,17 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.jvoyatz.beateat.R
+import com.jvoyatz.beateat.common.PERMISSIONS
 import com.jvoyatz.beateat.databinding.ActivityMapsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
-    private val PERMISSIONS by lazy {
-        arrayOf(
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION
-        )
-    }
-
-    private lateinit var mMap: GoogleMap
-    private lateinit var binding: ActivityMapsBinding
+@AndroidEntryPoint
+class MapsActivity : AppCompatActivity() {
 
     private val noLocationDialog: AlertDialog by lazy {
         MaterialAlertDialogBuilder(this)
@@ -61,18 +52,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
+    private lateinit var binding: ActivityMapsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        requestLocationPermissions()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        requestLocationPermissions()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (noLocationDialog.isShowing) {
+            noLocationDialog.dismiss()
+        }
     }
 
     private fun requestLocationPermissions() {
@@ -81,7 +79,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 applicationContext,
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED) -> {
-                createLocationRequest()
+                //createLocationRequest()
             }
             shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION) -> {
                 if (!noLocationDialog.isShowing)
@@ -93,27 +91,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    fun createLocationRequest() {
-        val locationRequest = LocationRequest.create()?.apply {
-            interval = 10000
-            fastestInterval = 5000
-            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-        }
-    }
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (noLocationDialog.isShowing) {
-            noLocationDialog.dismiss()
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.navHostFragment).navigateUp() || super.onSupportNavigateUp()
     }
 }
