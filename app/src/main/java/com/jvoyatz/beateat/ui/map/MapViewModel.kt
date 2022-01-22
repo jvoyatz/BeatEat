@@ -1,4 +1,4 @@
-package com.jvoyatz.beateat.ui
+package com.jvoyatz.beateat.ui.map
 
 import androidx.lifecycle.ViewModel
 import com.jvoyatz.beateat.domain.usecases.UseCases
