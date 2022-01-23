@@ -2,6 +2,7 @@ package com.jvoyatz.beateat.di
 
 import com.jvoyatz.beateat.common.URL
 import com.jvoyatz.beateat.data.PlacesRepositoryImpl
+import com.jvoyatz.beateat.data.network.AuthInterceptor
 import com.jvoyatz.beateat.data.network.FoursquareApiService
 import com.jvoyatz.beateat.domain.repository.PlacesRepository
 import com.jvoyatz.beateat.domain.usecases.SearchPlacesInteractor
@@ -18,6 +19,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -36,11 +38,12 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideOkHttp(interceptor: HttpLoggingInterceptor): OkHttpClient =
+    fun provideOkHttp(interceptor: HttpLoggingInterceptor, authInterceptor: AuthInterceptor): OkHttpClient =
         OkHttpClient.Builder()
-            .addInterceptor(interceptor)
+            .addInterceptor(authInterceptor)
+            //.addInterceptor(interceptor)
             .retryOnConnectionFailure(true)
-            .build();
+            .build()
 
     @Provides
     @Singleton
@@ -48,6 +51,7 @@ class AppModule {
         Retrofit.Builder()
             .baseUrl(URL)
             .client(okHttpClient)
+            .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
 

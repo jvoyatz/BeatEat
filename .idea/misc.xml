@@ -3,7 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/drawable/ic_baseline_broken_image_24.xml" value="0.3802083333333333" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/drawable/ic_location.xml" value="0.3802083333333333" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/drawable/ic_location_red.xml" value="0.25729166666666664" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/drawable/loading_img.xml" value="0.37552083333333336" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/drawable/swipe_up_handle.xml" value="0.3802083333333333" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout-land/map_fragment.xml" value="0.4786458333333333" />
         <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/activity_maps.xml" value="0.359375" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/fragment_blank.xml" value="0.24895833333333334" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/fragment_home_list_item_header.xml" value="0.3640625" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/fragment_place_item.xml" value="0.33" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/fragment_place_item_loading.xml" value="0.4239583333333333" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/header_item.xml" value="0.15833333333333333" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/items_loading_item.xml" value="0.3640625" />
+        <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/loading_item.xml" value="0.15833333333333333" />
         <entry key="..\:/John/dev/workspace/BeatEat/app/src/main/res/layout/map_fragment.xml" value="0.20104166666666667" />
       </map>
     </option>

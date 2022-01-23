@@ -1,4 +1,4 @@
 package com.jvoyatz.beateat.domain.usecases
 
-class UseCases(searchPlacesInteractor: SearchPlacesInteractor) {
+class UseCases(val searchPlacesInteractor: SearchPlacesInteractor) {
 }

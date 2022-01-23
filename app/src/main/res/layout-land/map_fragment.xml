@@ -8,6 +8,9 @@
     <include layout="@layout/fragment_place_item"
         android:id="@+id/navigation_item"
         android:visibility="visible"
+        android:layout_width="300dp"
+        android:layout_gravity="center|top"
+        android:layout_height="wrap_content"
         android:alpha="0.0"/>
 
     <fragment
@@ -24,7 +27,7 @@
         android:visibility="visible"
         app:behavior_peekHeight="140dp"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="200dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

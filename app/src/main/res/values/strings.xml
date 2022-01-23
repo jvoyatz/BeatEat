@@ -4,7 +4,13 @@
     <string name="loc_precise_granted">Precise location access granted for this app</string>
     <string name="loc_approx_granted">Approximate location access granted for this app</string>
     <string name="warning">Warning</string>
-    <string name="location_permissions_not_granted_message">This app needs the location permissions so as to provide places nearby your current location! Press ok to request again, otherwise you won\'t be able to see the suggested places.</string>
+    <string name="location_permissions_not_granted_message">This app needs the location permissions so as to provide places nearby your current location! Press OK to request again, otherwise you won\'t be able to see the suggested places.</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="loading">Loading</string>
+    <string name="places_header_results">Places found</string>
+    <string name="places_header_exhausted">No places found</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contentDesription">ContentDescription</string>
 </resources>

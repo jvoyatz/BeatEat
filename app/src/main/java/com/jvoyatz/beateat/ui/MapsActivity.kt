@@ -3,6 +3,7 @@ package com.jvoyatz.beateat.ui
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -17,6 +18,7 @@ import com.jvoyatz.beateat.common.PERMISSIONS
 import com.jvoyatz.beateat.databinding.ActivityMapsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+private const val TAG = "MapsActivity"
 @AndroidEntryPoint
 class MapsActivity : AppCompatActivity() {
 

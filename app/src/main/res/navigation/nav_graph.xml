@@ -8,4 +8,5 @@
         android:id="@+id/mapFragment"
         android:name="com.jvoyatz.beateat.ui.map.MapFragment"
         android:label="MapFragment" />
+
 </navigation>
