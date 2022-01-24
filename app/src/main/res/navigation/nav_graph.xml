@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.jvoyatz.beateat.ui.map.MapFragment"
-        android:label="MapFragment" />
+        android:name="com.jvoyatz.beatit.ui.map.MapFragment"
+        android:label="@string/map_fragment" />
 
 </navigation>

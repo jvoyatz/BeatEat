@@ -8,7 +8,7 @@
 
         <variable
             name="place"
-            type="com.jvoyatz.beateat.domain.Place" />
+            type="com.jvoyatz.beatit.domain.Place" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
