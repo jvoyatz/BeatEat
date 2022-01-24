@@ -8,10 +8,9 @@ import com.jvoyatz.beatit.domain.usecases.SearchPlaces
 import com.jvoyatz.beatit.domain.usecases.UseCases
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.StandardTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.test.*
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -42,10 +41,14 @@ class MapViewModelTest() {
         Dispatchers.resetMain()
     }
     @Test
-    fun `viewmodel_searchplaces_init`()= runBlocking{
-        with(dispatcher) {
-            viewModel.searchForPlaces("234234.234")
-            assertThat(viewModel.placeState.first()).isInstanceOf(Resource.Init::class.java)
-        }
+    fun `viewmodel_searchplaces_init`()= runTest{
+//        with(dispatcher) {
+//            viewModel.searchForPlaces("234234.234")
+//            //assertThat(viewModel.placeState.first()).isInstanceOf(Resource.Init::class.java)
+//            vie
+//        }
+
+        //viewModel.searchForPlaces()
+
     }
 }
